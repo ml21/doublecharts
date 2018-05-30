@@ -1,8 +1,10 @@
+<!-- http://jsfiddle.net/8vjgLnc3/7/ -->
 <head>
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="data.js"></script>
+    <script src="common.js"></script>
 </head>
 <body>
     <div id="charts"></div>
@@ -78,6 +80,11 @@
             console.log("value at 0.011765");
             console.log(dataset.data[data.xData.indexOf(0.011765)][1]);
 
+            var chart = document.createElement('div');
+            chart.classList.add('chart');
+
+            var charts = document.querySelector('#charts');
+
             $('<div class="chart">')
                 .appendTo('#charts')
                 .highcharts({
@@ -141,11 +148,6 @@
                         }
                     }]
             });
-        });
-        
-        $.each(data.datasets, function (i, dataset) {
-
-            
         });
     </script>
 </body>
